@@ -8,9 +8,22 @@
   <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
 <body>
+  <div id="save" style="color:white;position:fixed;bottom:0">SAVE</div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"
     integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./assets/script/index.js"></script>
+  <script>
+    document.getElementById("save").addEventListener("click", function () {
+        let type = "webp";
+        let ele = document.createElement("a");
+        document.body.appendChild(ele);
+        ele.download = `12-26-2022.${type.toLowerCase()}`;
+        let canvas = document.querySelector("canvas");
+        ele.href = canvas.toDataURL(`image/${type.toLowerCase()};base64`);
+        ele.click();
+        ele.remove();
+      });
+  </script>
 </body>
 </html>

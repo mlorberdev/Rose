@@ -1,5 +1,5 @@
 let v = [];
-let cols = 450, rows = 25;
+let cols = 500, rows = 30;
 let td = 180 * 15 / cols; // theta density
 let rd = 1 / rows; // r density
 
@@ -26,14 +26,16 @@ function setup() {
 }
 
 function draw() {
-  background(230, 50, 15);
-  orbitControl(4, 4);
-  rotateX(-30);
+  background(129, 50, 30);
+  orbitControl(3, 4);
+  rotateX(-40);
+  rotateZ(-35);
+  rotateY(-340);
 
 
 
   for (let r = 0; r < v.length; r++) {
-    fill(340, 100, -20 + r * rd * 120)
+    fill(129, 100, -20 + r * rd * 120)
     for (let theta = 0; theta < v[r].length; theta++) {
       if (r < v.length - 1 && theta < v[r].length - 1) {
         beginShape();
